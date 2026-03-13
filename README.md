@@ -48,10 +48,11 @@ Instead of relying on textbook excerpts, we employed a multi-axis stratified sam
 * **203,945** Fine-grained Evaluation Rubrics generated.
 * **~9.8** Highly structured Rubrics tailored for *each* individual query.
 
-The queries are stratified across three core dimensions to mirror actual user demands:
-- **Clinical Care (60%):** Disease diagnosis, treatment regimens, and contraindications.
-- **Wellness Health (25%):** Lifestyle interventions, preventative care, and wellness.
-- **Professional Inquiry (15%):** Pathophysiological mechanisms and evidence-based medicine.
+To capture the true ecological distribution of online medical interactions, the dataset is configured with **70% single-turn QA** (testing precise knowledge extraction) and **30% multi-turn dialogues** (testing contextual memory and intent refinement). The scenarios exhibit a pronounced long-tail characteristic across three core domains:
+
+- 🏥 **Clinical Care (66.22%):** The primary evaluation body assessing evidence-based recommendations. Dominated by high-frequency Internet consultations, including *Digestive System (19.4%)*, *Reproductive System (16.4%)*, and *Integumentary System (11.8%)*.
+- 🍏 **Wellness Health (27.61%):** Covering preventative care and lifestyle interventions. Key sub-domains include *Nutrition & Diet (21.50%)*, *Medical Aesthetics (9.68%)*, *Fitness (5.99%)*, and *Medical Policies*.
+- 🔬 **Professional Inquiry (6.08%):** Evaluating reasoning capabilities in complex logic and academic literature, focusing on *Clinical Medicine (31.1%)*, *Basic Medicine Science (30.3%)*, and *Medical Technology (8.5%)*.
 
 ### 2. Automated, Multi-Model Rubric Generation 🤖
 
@@ -63,16 +64,16 @@ To overcome the quantitative difficulties and prohibitive costs of manual evalua
 
 ### 3. Hierarchical Constraints & Circuit-Breaker Penalties ⚖️
 
-QuarkMedBench abandons simplistic scoring, introducing a structured quantification mechanism to systematically combat "length bias":
+QuarkMedBench abandons simplistic scoring, introducing a structured quantification mechanism to systematically combat "length bias" and penalize high-risk clinical outputs:
 
-- **Positive Dimensions:** Essential (Core facts), Important (Clinical reasoning), and Highlight (Extended value).
-- **Negative Dimension (Pitfall):** A strict circuit-breaker penalty mechanism that decisively punishes factual deviations and unsafe medical advice.
+- **Positive Dimensions:** Essential (Core facts/diagnoses), Important (Clinical reasoning), and Highlight (Extended value/evidence).
+- **Negative Dimension (Pitfall):** A strict circuit-breaker penalty mechanism that decisively punishes factual deviations, unsafe medical advice, or failures to recognize multi-objective contraindications.
 
 ---
 
 ## 💡 Why QuarkMedBench?
 
-* **Ecological Validity:** Precisely aligns with genuine, long-tail online user intents.
+* **Ecological Validity:** Precisely aligns with genuine, long-tail online user intents and local clinical guidelines.
 * **Immune to Benchmark Decay:** The automated generation framework inherently supports the timely, dynamic updating of medical knowledge, circumventing the obsolescence typical of traditional static benchmarks.
 * **Rubrics as Rewards:** The fine-grained rubrics generated can be seamlessly integrated into RLHF/GRPO training pipelines to drive value-aligned medical LLM optimization.
 * **Domain Agnostic Potential:** The underlying methodology possesses substantial generalization potential for extension into other high-fault-intolerance vertical domains (e.g., Law, Finance).
