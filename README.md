@@ -1,6 +1,5 @@
 <div align="center">
 
-
 # 🩺 QuarkMedBench: A Real-World Scenario Driven Benchmark for Evaluating Large Language Models
 
 **Bridging the Chasm Between Standardized Exams and Real-World Clinical Efficacy**
@@ -32,7 +31,6 @@ QuarkMedBench reveals the true clinical adaptability and "length bias" vulnerabi
   <em><b>Figure 1: Performance of mainstream LLMs on QuarkMedBench.</b> The grouped bar chart compares the scores without length constraints (hatched bars) versus those subjected to a strict $\le$1000-word constraint (solid blue bars).</em>
 </div>
 
-
 **Key Insights:**
 
 * **Length Bias Exposed:** Models like Gemini 2.5 Pro and GPT-5 exhibit significant score drops when strictly constrained ($\le$1000 words), revealing a reliance on text inflation rather than information density.
@@ -42,13 +40,18 @@ QuarkMedBench reveals the true clinical adaptability and "length bias" vulnerabi
 
 ## 🚀 Core Contributions & Methodology
 
-### 1. Real-World Scenario-Driven Dataset 📊
+### 1. Massive Real-World Dataset 📊
 
-Instead of relying on textbook excerpts, we employed a multi-axis stratified sampling strategy based on authentic Internet healthcare logs. The dataset encompasses three core dimensions to mirror actual user demands:
+Instead of relying on textbook excerpts, we employed a multi-axis stratified sampling strategy based on authentic Internet healthcare logs. The dataset encompasses a massive scale of high-quality evaluation data:
 
-- **Rigorous Medical (60%):** Disease diagnosis, treatment regimens, and contraindications.
-- **General Health (25%):** Lifestyle interventions, preventative care, and wellness.
-- **Professional Queries (15%):** Pathophysiological mechanisms and evidence-based medicine.
+* **20,821** Authentic User Queries (rigorously cleaned and desensitized).
+* **203,945** Fine-grained Evaluation Rubrics generated.
+* **~9.8** Highly structured Rubrics tailored for *each* individual query.
+
+The queries are stratified across three core dimensions to mirror actual user demands:
+- **Clinical Care (60%):** Disease diagnosis, treatment regimens, and contraindications.
+- **Wellness Health (25%):** Lifestyle interventions, preventative care, and wellness.
+- **Professional Inquiry (15%):** Pathophysiological mechanisms and evidence-based medicine.
 
 ### 2. Automated, Multi-Model Rubric Generation 🤖
 
@@ -87,4 +90,3 @@ If you find our dataset or methodology helpful, please consider citing our paper
   journal={arXiv preprint arXiv:XXXX.XXXXX},
   year={2026}
 }
-```
