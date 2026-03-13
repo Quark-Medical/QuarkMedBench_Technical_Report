@@ -86,7 +86,7 @@ If you find our dataset or methodology helpful, please consider citing our paper
 
 ```bibtex
 @article{quarkmedbench2026,
-  title={QuarkMedBench: A Fine-Grained Evaluation Benchmark for Large Language Models in Real-World Medical Scenarios},
+  title={QuarkMedBench: A Real-World Scenario Driven Benchmark for Evaluating Large Language Models},
   author={Your Name and Co-authors},
   journal={arXiv preprint arXiv:XXXX.XXXXX},
   year={2026}
