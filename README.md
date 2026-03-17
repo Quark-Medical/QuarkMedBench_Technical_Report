@@ -5,7 +5,7 @@
 **Bridging the Chasm Between Standardized Exams and Real-World Clinical Efficacy**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Paper](https://img.shields.io/badge/ArXiv-Paper-red.svg)](YOUR_LINK_HERE)
+[![Paper](https://img.shields.io/badge/ArXiv-Paper-red.svg)](https://arxiv.org/abs/2603.13691)
 [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-blue.svg)](YOUR_LINK_HERE)
 
 </div>
